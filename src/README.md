@@ -21,4 +21,7 @@ Para o desenvolvimento do projeto, foram levantadas as seguintes premissas:
     [S3](http://aws.amazon.com/s3/)
     [EKS](https://aws.amazon.com/eks/)
 
+##
+
+![Diagrama  do projeto](/diagramas/arquitetura_cloud_aws.drawio.png)
 

@@ -1,14 +1,12 @@
-name: "Terraform"
+name: "Terraform destroy"
 
 on: 
-  push: 
-    branches: ["main"]
-    paths: ["src/**"]
+  push:
   workflow_dispatch:
 
 jobs:
   terraform: 
-    name: "Terraform apply"
+    name: "Terraform destroy"
     runs-on: "ubuntu-latest"
 
     steps:
@@ -26,9 +24,10 @@ jobs:
         working-directory: ./src
         run: terraform init -backend-config="bucket=${{ secrets.AWS_BUCKET_NAME }}" -backend-config="key=${{ secrets.TERRAFORM_TFSTATE }}"
 
-        
-      - name: Terraform apply
+
+      - name: Terraform destroy
         working-directory: ./src
-        run: terraform apply --auto-approve
+        run: terraform destroy --auto-approve
+
         
       
