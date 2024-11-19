@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Terraform init
-        run: terraform init -backend-config="bucket=${secrets.AWS_BUCKET_NAME}" -backend-config="key=${secrets.TERRAFORM_TFSTATE}"
+        run: terraform init -backend-config="bucket=${{ secrets.AWS_BUCKET_NAME }}" -backend-config="key=${{ secrets.TERRAFORM_TFSTATE }}"
 
         
       
